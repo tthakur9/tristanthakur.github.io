@@ -1,0 +1,161 @@
+:root{
+  --bg: #0b0b0b;
+  --fg: #f2f2f2;
+  --muted: #bdbdbd;
+  --line: #f2f2f2;
+  --accent: #00ff85;
+  --danger: #ff2e2e;
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+}
+
+.container{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 56px 18px 42px;
+}
+
+/* hard header */
+.hero{
+  border: 2px solid var(--line);
+  padding: 18px 16px;
+}
+
+.hero-top{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-name{
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.hero-subtitle{
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.hero-divider{
+  margin-top: 16px;
+  height: 2px;
+  background: var(--line);
+}
+
+/* sections: no rounding, no gradients */
+.section{
+  margin-top: 22px;
+  border: 2px solid var(--line);
+  padding: 16px;
+  background: transparent;
+}
+
+.section-head h2{
+  margin: 0;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+/* projects become stacked blocks like system logs */
+.cards{
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.card{
+  border: 2px solid var(--line);
+  padding: 14px;
+  background: transparent;
+}
+
+.card-title{
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.muted{
+  color: var(--muted);
+  margin: 10px 0 0;
+}
+
+/* links: loud */
+a{
+  color: var(--fg);
+  text-decoration: none;
+  border-bottom: 2px solid var(--fg);
+}
+
+a:hover{
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* button = brutal block */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  border: 2px solid var(--line);
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.btn.primary{
+  background: var(--fg);
+  color: var(--bg);
+  border-color: var(--fg);
+}
+
+.btn.primary:hover{
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+.card-links{
+  margin-top: 12px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.contact-line{
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sep{
+  color: var(--muted);
+}
+
+.footer{
+  margin-top: 18px;
+  padding: 10px 0 0;
+  border-top: 2px solid var(--line);
+  text-align: left;
+}
