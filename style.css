@@ -1,45 +1,99 @@
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 0 24px;
+/* ====== Base ====== */
+:root{
+  --bg: #070A0F;
+  --panel: rgba(255,255,255,0.06);
+  --panel-2: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.14);
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.70);
+  --faint: rgba(255,255,255,0.45);
+  --accent: #7BE7FF;   /* cyan */
+  --accent2: #A78BFA;  /* violet */
+  --shadow: 0 12px 40px rgba(0,0,0,0.55);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin: 0;
+  color: var(--text);
+  background: var(--bg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   line-height: 1.6;
-  color: #111;
 }
 
-header {
-  margin-bottom: 48px;
+/* Subtle “defense-tech” background */
+.bg{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(900px 500px at 20% -10%, rgba(123,231,255,0.16), transparent 55%),
+    radial-gradient(700px 500px at 90% 10%, rgba(167,139,250,0.14), transparent 55%),
+    radial-gradient(900px 700px at 50% 110%, rgba(123,231,255,0.10), transparent 55%),
+    linear-gradient(to bottom, rgba(255,255,255,0.03), transparent 18%);
+  filter: saturate(1.05);
 }
 
-h1 {
-  font-size: 2.4rem;
-  margin-bottom: 0.2em;
+.container{
+  width: min(980px, calc(100% - 48px));
+  margin: 0 auto;
 }
 
-h2 {
-  margin-top: 48px;
-  font-size: 1.4rem;
+/* ====== Header ====== */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(7,10,15,0.72);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-section {
-  margin-bottom: 32px;
+.topline{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 0 12px 0;
 }
 
-ul {
-  padding-left: 0;
-  list-style: none;
+h1{
+  margin: 0;
+  font-size: 1.9rem;
+  letter-spacing: 0.2px;
 }
 
-li {
-  margin-bottom: 20px;
+.subtitle{
+  margin: 6px 0 0 0;
+  color: var(--muted);
+  font-size: 0.98rem;
 }
 
-a {
-  color: #0a66c2;
-  font-weight: 500;
+.nav{
+  display: flex;
+  gap: 16px;
+  padding: 0 0 16px 0;
+}
+
+.nav a{
+  color: var(--muted);
   text-decoration: none;
+  font-size: 0.95rem;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: transparent;
+}
+.nav a:hover{
+  color: var(--text);
+  border-color: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
 }
 
-a:hover {
-  text-decoration: underline;
+/* ====== Sections ====== */
+.section{
+  padding: 28px 0;
 }
+
+.section-header{
