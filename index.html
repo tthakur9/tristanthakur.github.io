@@ -6,51 +6,111 @@
   <title>Tristan Thakur</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
-  <header>
-    <h1>Tristan Thakur</h1>
-    <p>Computer Science @ Georgia Tech | ML | Robotics | Autonomy </p>
-    <a href="resume_jan26.pdf" target="_blank">Latest Resume</a>
+<body>
+  <div class="bg"></div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="topline">
+        <div class="id">
+          <h1>Tristan Thakur</h1>
+          <p class="subtitle">Computer Science @ Georgia Tech | ML | Robotics & Autonomy</p>
+        </div>
+
+        <div class="cta">
+          <a class="btn" href="resume_jan26.pdf" target="_blank" rel="noopener noreferrer">
+            Latest Resume
+          </a>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section>
-    <h2>About</h2>
-    <p>
-      Hi, {placeholder for elevator pitch/intro}
-    </p>
-  </section>
+  <main class="container">
+    <section id="about" class="section">
+      <div class="section-header">
+        <h2>About</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="card">
+        <p>Hi</p>
+      </div>
+    </section>
 
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li>
-        <strong>Learning UAV State Estimation</strong><br />
-        {Insert description} <br />
-        <a href="https://github.gatech.edu/pages/adeb40/ML-Project-Group-60/">Website</a>
-        <a href="https://github.gatech.edu/hkuperman3/Learning-UAV-State-Estimator">Github</a>
-      </li>
-      <li>
-        <strong>LLM-Powered Kudzu Modelling & Simulation</strong><br />
-        {Insert description} <br />
-        <a href="llm_powered_kudzu_paper.pdf">Paper</a>
-        <a href="https://github.gatech.edu/jbeck73/CSE6730Project">GitHub</a>
-      </li>
-      <li>
-        <strong>Surrogate Evolution</strong><br />
-        {Insert description} <br />
-        <a href="https://github.com/AaronMcDaniel/surrogate-evolution">GitHub</a>
-      </li>
-    </ul>
-  </section>
+    <section id="projects" class="section">
+      <div class="section-header">
+        <h2>Projects</h2>
+        <div class="rule"></div>
+      </div>
 
-  <section>
-    <h2>Contact Me</h2>
-    <p>
-      <strong>Email: trisjt21@gmail.com</strong>
-      <a href="https://www.linkedin.com/in/tristan-thakur/">LinkedIn</a> |
-    </p>
-  </section>
+      <ul class="grid">
+        <li class="card project">
+          <div class="project-head">
+            <strong>Learning UAV State Estimation</strong>
+          </div>
+          <div class="project-body">
+            <p>fejndwjns</p>
+          </div>
+          <div class="project-links">
+            <a href="https://github.gatech.edu/pages/adeb40/ML-Project-Group-60/" target="_blank" rel="noopener noreferrer">Website</a>
+            <a href="https://github.gatech.edu/hkuperman3/Learning-UAV-State-Estimator" target="_blank" rel="noopener noreferrer">Github</a>
+          </div>
+        </li>
 
+        <li class="card project">
+          <div class="project-head">
+            <strong>LLM-Powered Kudzu Modelling & Simulation</strong>
+          </div>
+          <div class="project-body">
+            <p>fejndwjns</p>
+          </div>
+          <div class="project-links">
+            <a href="llm_powered_kudzu_paper.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
+            <a href="https://github.gatech.edu/jbeck73/CSE6730Project" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </li>
+
+        <li class="card project">
+          <div class="project-head">
+            <strong>Surrogate Evolution</strong>
+          </div>
+          <div class="project-body">
+            <p>fejndwjns</p>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/AaronMcDaniel/surrogate-evolution" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-header">
+        <h2>Contact Me</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="card">
+        <p class="contact-links">
+          <a href="mailto:trisjt21@gmail.com">Email</a>
+          <span class="sep">|</span>
+          <a href="https://www.linkedin.com/in/tristan-thakur/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <span class="sep">|</span>
+          <a href="https://github.com/thakur9" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>©</span>
+      <span>Tristan Thakur</span>
+    </footer>
+  </main>
 </body>
 </html>
