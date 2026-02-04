@@ -197,3 +197,22 @@ a:hover{
   border-top: 2px solid var(--line-strong);
   text-align: left;
 }
+
+.grid2{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.grid-item .section-body{
+  /* reuse the same left-rule look for consistency */
+  padding-left: 14px;
+  border-left: 2px solid var(--line-strong);
+}
+
+@media (min-width: 840px){
+  .grid2{
+    grid-template-columns: 1fr 280px;
+    align-items: start;
+  }
+}
