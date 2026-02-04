@@ -2,9 +2,9 @@
   --bg: #0b0b0b;
   --fg: #f2f2f2;
   --muted: #bdbdbd;
-  --line: #f2f2f2;
+  --line: rgba(242,242,242,0.22);
+  --line-strong: rgba(242,242,242,0.75);
   --accent: #00ff85;
-  --danger: #ff2e2e;
 }
 
 *{ box-sizing: border-box; }
@@ -15,20 +15,41 @@ html, body{
   background: var(--bg);
   color: var(--fg);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  line-height: 1.55;
+  line-height: 1.6;
   letter-spacing: 0.01em;
+}
+
+/* subtle grain + vignette (sophisticated, still raw) */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(1200px 700px at 50% 15%, rgba(255,255,255,0.05), transparent 60%),
+    radial-gradient(900px 600px at 70% 80%, rgba(255,255,255,0.03), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.35));
+  mix-blend-mode: normal;
+  opacity: 1;
 }
 
 .container{
   max-width: 980px;
   margin: 0 auto;
   padding: 56px 18px 42px;
+  position: relative;
 }
 
-/* hard header */
+/* ONE frame for the whole page */
+main.container{
+  border: 2px solid var(--line-strong);
+  padding: 26px 22px 18px;
+}
+
+/* header: no box, just spacing + divider */
 .hero{
-  border: 2px solid var(--line);
-  padding: 18px 16px;
+  padding: 0 0 16px 0;
+  border: none;
 }
 
 .hero-top{
@@ -41,8 +62,8 @@ html, body{
 
 .hero-name{
   margin: 0;
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  letter-spacing: -0.03em;
+  font-size: clamp(2.1rem, 5vw, 3.3rem);
+  letter-spacing: -0.04em;
   text-transform: uppercase;
 }
 
@@ -52,17 +73,22 @@ html, body{
 }
 
 .hero-divider{
-  margin-top: 16px;
+  margin-top: 18px;
   height: 2px;
-  background: var(--line);
+  background: var(--line-strong);
 }
 
-/* sections: no rounding, no gradients */
+/* sections: remove full boxes; use dividers and a left rule */
 .section{
-  margin-top: 22px;
-  border: 2px solid var(--line);
-  padding: 16px;
-  background: transparent;
+  margin-top: 18px;
+  padding: 14px 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-head{
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .section-head h2{
@@ -70,20 +96,34 @@ html, body{
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.18em;
+  color: rgba(242,242,242,0.88);
 }
 
-/* projects become stacked blocks like system logs */
+.section-body{
+  margin-top: 10px;
+  padding-left: 14px;
+  border-left: 2px solid var(--line-strong);
+}
+
+/* projects: clean list with minimal separators (no nested boxes) */
 .cards{
   margin-top: 12px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 12px;
+  gap: 0;
+  padding-left: 14px;
+  border-left: 2px solid var(--line-strong);
 }
 
 .card{
-  border: 2px solid var(--line);
-  padding: 14px;
-  background: transparent;
+  padding: 14px 0;
+  border: none;
+  border-top: 1px solid var(--line);
+}
+
+.card:first-child{
+  border-top: none;
+  padding-top: 0;
 }
 
 .card-title{
@@ -97,11 +137,18 @@ html, body{
   margin: 10px 0 0;
 }
 
-/* links: loud */
+.card-links{
+  margin-top: 10px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* links: underlined, aggressive, readable */
 a{
   color: var(--fg);
   text-decoration: none;
-  border-bottom: 2px solid var(--fg);
+  border-bottom: 2px solid rgba(242,242,242,0.7);
 }
 
 a:hover{
@@ -109,13 +156,14 @@ a:hover{
   border-bottom-color: var(--accent);
 }
 
-/* button = brutal block */
+/* button: still brutal, but not screaming */
 .btn{
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 10px 12px;
-  border: 2px solid var(--line);
+  border: 2px solid var(--line-strong);
+  background: transparent;
   color: var(--fg);
   text-decoration: none;
   font-weight: 800;
@@ -126,20 +174,12 @@ a:hover{
 .btn.primary{
   background: var(--fg);
   color: var(--bg);
-  border-color: var(--fg);
 }
 
 .btn.primary:hover{
   background: var(--accent);
   border-color: var(--accent);
   color: var(--bg);
-}
-
-.card-links{
-  margin-top: 12px;
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
 }
 
 .contact-line{
@@ -149,13 +189,11 @@ a:hover{
   gap: 10px;
 }
 
-.sep{
-  color: var(--muted);
-}
+.sep{ color: var(--muted); }
 
 .footer{
   margin-top: 18px;
-  padding: 10px 0 0;
-  border-top: 2px solid var(--line);
+  padding-top: 12px;
+  border-top: 2px solid var(--line-strong);
   text-align: left;
 }
