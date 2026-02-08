@@ -404,3 +404,11 @@ a:hover{
 .muted{
   font-size: 0.95rem;
 }
+
+.flipcard-back{
+  border-left: none !important;   /* kill extra line */
+  padding-left: 0;                /* align with text above */
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);  /* use horizontal separation instead */
+}
