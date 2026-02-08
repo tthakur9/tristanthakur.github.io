@@ -69,29 +69,81 @@
       </div>
     </section>
 
+    <!-- SKILLS: icon-like chips (no long paragraph) -->
     <section class="section" id="skills">
       <div class="section-head"><h2>Technical Skills</h2></div>
       <div class="section-body">
-        <p>
-          <strong>Programming:</strong> C++, Python, Java, C, R, SQL, x86 Assembly, Bash<br>
-          <strong>Tools:</strong> Linux, Git, Docker, Kubernetes, ROS, AWS, NumPy, PyTorch, Conda, Jupyter,
-          MySQL, Conan, Poetry, Slurm, GDB<br>
-          <strong>Languages:</strong> English (native), French (intermediate), Spanish (intermediate), Russian (beginner)
-        </p>
+        <div class="skills">
+          <div class="skill-group">
+            <div class="skill-label">Programming</div>
+            <div class="chips">
+              <span class="chip" title="C++">C++</span>
+              <span class="chip" title="Python">PY</span>
+              <span class="chip" title="Java">JAVA</span>
+              <span class="chip" title="C">C</span>
+              <span class="chip" title="R">R</span>
+              <span class="chip" title="SQL">SQL</span>
+              <span class="chip" title="x86 Assembly">x86</span>
+              <span class="chip" title="Bash / Shell">SH</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-label">ML / Robotics</div>
+            <div class="chips">
+              <span class="chip" title="PyTorch">TORCH</span>
+              <span class="chip" title="NumPy">NP</span>
+              <span class="chip" title="ROS">ROS</span>
+              <span class="chip" title="Conda">CONDA</span>
+              <span class="chip" title="Jupyter">NB</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-label">Systems / Tooling</div>
+            <div class="chips">
+              <span class="chip" title="Linux">LNX</span>
+              <span class="chip" title="Git">GIT</span>
+              <span class="chip" title="Docker">DCKR</span>
+              <span class="chip" title="Kubernetes">K8S</span>
+              <span class="chip" title="AWS">AWS</span>
+              <span class="chip" title="MySQL">MYSQL</span>
+              <span class="chip" title="Conan">CONAN</span>
+              <span class="chip" title="Poetry">POETRY</span>
+              <span class="chip" title="Slurm">SLURM</span>
+              <span class="chip" title="GDB">GDB</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-label">Languages</div>
+            <div class="chips">
+              <span class="chip" title="English (native)">EN</span>
+              <span class="chip" title="French (intermediate)">FR</span>
+              <span class="chip" title="Spanish (intermediate)">ES</span>
+              <span class="chip" title="Russian (beginner)">RU</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- EXPERIENCE: click-to-expand -->
     <section class="section" id="experience">
       <div class="section-head"><h2>Work Experience</h2></div>
       <div class="section-body">
+
         <div class="cards">
 
-          <article class="card">
-            <div class="card-top">
-              <strong class="card-title">Shield AI — Autonomy Engineer Intern (Washington, DC)</strong>
-            </div>
-            <div class="card-body">
+          <details class="flipcard">
+            <summary class="flipcard-front">
+              <div class="card-top">
+                <strong class="card-title">Shield AI — Autonomy Engineer Intern (Washington, DC)</strong>
+              </div>
               <p class="muted">June 2025 – August 2025</p>
+              <span class="hint">Click to expand</span>
+            </summary>
+            <div class="flipcard-back">
               <ul>
                 <li>Designed and deployed a hierarchical path-planning framework in C++ for Group 5 fixed-wing UAS, producing kinematically flyable trajectories <strong>3.47× faster</strong> with a <strong>+22 pp</strong> success rate at a 2.0 s horizon.</li>
                 <li>Developed a stress-testing suite to evaluate planner performance in randomized, high-complexity environments; uncovered multiple failure modes in multi-dimensional state-space navigation.</li>
@@ -99,115 +151,139 @@
                 <li>Diagnosed a critical production bug in sampling bounds that blocked exploration in complex obstacle fields; implemented a dynamic bounding algorithm adopted by <strong>70+ engineers</strong> across the autonomy stack.</li>
               </ul>
             </div>
-          </article>
+          </details>
 
-          <article class="card">
-            <div class="card-top">
-              <strong class="card-title">Georgia Tech Research Institute — Machine Learning Engineer Intern (Atlanta, GA)</strong>
-            </div>
-            <div class="card-body">
+          <details class="flipcard">
+            <summary class="flipcard-front">
+              <div class="card-top">
+                <strong class="card-title">Georgia Tech Research Institute — Machine Learning Engineer Intern (Atlanta, GA)</strong>
+              </div>
               <p class="muted">May 2024 – December 2024</p>
+              <span class="hint">Click to expand</span>
+            </summary>
+            <div class="flipcard-back">
               <ul>
                 <li>Developed an AutoML pipeline in Python using an evolutionary Neural Architecture Search (NAS) algorithm to automate airborne object detection model construction; parallelized evaluations across GPU nodes on an HPC cluster.</li>
                 <li>Trained a Kolmogorov-Arnold Network surrogate to predict model performance, eliminating <strong>1100+ hours</strong> of candidate-architecture training on <strong>11 TB</strong> of high-speed aerial imagery.</li>
                 <li>Compressed VGG-16 into a lightweight student classifier using knowledge distillation for a fielded autonomous ISR system, retaining comparable accuracy with <strong>0.1%</strong> of original parameters.</li>
               </ul>
             </div>
-          </article>
+          </details>
 
-          <article class="card">
-            <div class="card-top">
-              <strong class="card-title">Georgia Tech Student Foundation Investments Committee — Head of Quantitative Research (Atlanta, GA)</strong>
-            </div>
-            <div class="card-body">
+          <details class="flipcard">
+            <summary class="flipcard-front">
+              <div class="card-top">
+                <strong class="card-title">Georgia Tech Student Foundation Investments Committee — Head of Quantitative Research (Atlanta, GA)</strong>
+              </div>
               <p class="muted">January 2023 – December 2025</p>
+              <span class="hint">Click to expand</span>
+            </summary>
+            <div class="flipcard-back">
               <ul>
                 <li>Directed quantitative research for a <strong>$2M+ AUM</strong> university endowment fund, developing systematic trading models, signal frameworks, and portfolio optimization tools.</li>
                 <li>Developed a Gaussian Hidden Markov Model for latent market regime detection using unsupervised EM-based training and state probability inference.</li>
                 <li>Implemented a Kalman Filter for real-time intraday beta estimation and dynamic hedge ratio calibration across equity exposures.</li>
               </ul>
             </div>
-          </article>
+          </details>
 
-          <article class="card">
-            <div class="card-top">
-              <strong class="card-title">Georgia Tech Vertically Integrated Projects — Undergraduate Researcher (Atlanta, GA)</strong>
-            </div>
-            <div class="card-body">
+          <details class="flipcard">
+            <summary class="flipcard-front">
+              <div class="card-top">
+                <strong class="card-title">Georgia Tech Vertically Integrated Projects — Undergraduate Researcher (Atlanta, GA)</strong>
+              </div>
               <p class="muted">April 2023 – December 2024</p>
+              <span class="hint">Click to expand</span>
+            </summary>
+            <div class="flipcard-back">
               <ul>
                 <li>Led a Google &amp; BMW-sponsored AI research team developing an evolutionary algorithm for generating high-performance image classification networks; surpassed CIFAR-10 benchmarks by <strong>3.5%</strong>.</li>
                 <li>Engineered network branching mechanisms for residual/skip connections that increased classification F1 scores by <strong>12%</strong>.</li>
                 <li>Integrated a custom vision transformer layer with patch embedding and multi-headed self-attention into the primitive set, improving generated models’ collective performance by <strong>9.5%</strong>.</li>
               </ul>
             </div>
-          </article>
+          </details>
 
         </div>
       </div>
     </section>
 
+    <!-- PROJECTS: click-to-expand -->
     <section class="section" id="projects">
-      <div class="section-head">
-        <h2>Projects</h2>
-      </div>
+      <div class="section-head"><h2>Projects</h2></div>
+      <div class="section-body">
 
-      <div class="cards">
-        <article class="card">
-          <div class="card-top">
-            <strong class="card-title">Cellular Automata–LLM Ecological Policy Simulation Framework</strong>
-          </div>
-          <div class="card-body">
-            <p class="muted">August 2025 – December 2025</p>
-            <ul>
-              <li>Developed a hybrid Cellular Automata–LLM simulation integrating spatial diffusion modeling with autonomous GPT agents that generate adaptive eradication policies.</li>
-              <li>Designed a closed-loop, RL-inspired control system enabling agents to reason over ecosystem states, optimize interventions, and coordinate across simulated landscapes.</li>
-            </ul>
-          </div>
-        </article>
+        <div class="cards">
 
-        <article class="card">
-          <div class="card-top">
-            <strong class="card-title">Learning UAV State Estimation in GPS-Denied Environments</strong>
-          </div>
-          <div class="card-body">
-            <p class="muted">January 2025 – April 2025</p>
-            <ul>
-              <li>Engineered an award-winning LSTM-based system for full 12-DOF UAV state estimation without GPS.</li>
-              <li>Built a multi-modal pipeline fusing PCA-reduced ResNet embeddings from monocular images with IMU and motor thrust data.</li>
-              <li>Augmented decoding with prior state context to reduce drift, achieving a ~<strong>60%</strong> reduction in state-MAE.</li>
-            </ul>
-          </div>
-          <div class="card-links">
-            <a class="link" href="https://github.gatech.edu/pages/adeb40/ML-Project-Group-60/" target="_blank" rel="noopener noreferrer">Website</a>
-            <a class="link" href="https://github.gatech.edu/hkuperman3/Learning-UAV-State-Estimator" target="_blank" rel="noopener noreferrer">Github</a>
-          </div>
-        </article>
+          <details class="flipcard">
+            <summary class="flipcard-front">
+              <div class="card-top">
+                <strong class="card-title">Cellular Automata–LLM Ecological Policy Simulation Framework</strong>
+              </div>
+              <p class="muted">August 2025 – December 2025</p>
+              <span class="hint">Click to expand</span>
+            </summary>
+            <div class="flipcard-back">
+              <ul>
+                <li>Developed a hybrid Cellular Automata–LLM simulation integrating spatial diffusion modeling with autonomous GPT agents that generate adaptive eradication policies.</li>
+                <li>Designed a closed-loop, RL-inspired control system enabling agents to reason over ecosystem states, optimize interventions, and coordinate across simulated landscapes.</li>
+              </ul>
+            </div>
+          </details>
 
-        <article class="card">
-          <div class="card-top">
-            <strong class="card-title">LLM-Powered Kudzu Modelling &amp; Simulation</strong>
-          </div>
-          <div class="card-body">
-            <p class="muted">Modeling &amp; simulation project (paper + code)</p>
-          </div>
-          <div class="card-links">
-            <a class="link" href="llm_powered_kudzu_paper.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
-            <a class="link" href="https://github.gatech.edu/jbeck73/CSE6730Project" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </div>
-        </article>
+          <details class="flipcard">
+            <summary class="flipcard-front">
+              <div class="card-top">
+                <strong class="card-title">Learning UAV State Estimation in GPS-Denied Environments</strong>
+              </div>
+              <p class="muted">January 2025 – April 2025</p>
+              <span class="hint">Click to expand</span>
+            </summary>
+            <div class="flipcard-back">
+              <ul>
+                <li>Engineered an award-winning LSTM-based system for full 12-DOF UAV state estimation without GPS.</li>
+                <li>Built a multi-modal pipeline fusing PCA-reduced ResNet embeddings from monocular images with IMU and motor thrust data.</li>
+                <li>Augmented decoding with prior state context to reduce drift, achieving a ~<strong>60%</strong> reduction in state-MAE.</li>
+              </ul>
+              <div class="card-links">
+                <a class="link" href="https://github.gatech.edu/pages/adeb40/ML-Project-Group-60/" target="_blank" rel="noopener noreferrer">Website</a>
+                <a class="link" href="https://github.gatech.edu/hkuperman3/Learning-UAV-State-Estimator" target="_blank" rel="noopener noreferrer">Github</a>
+              </div>
+            </div>
+          </details>
 
-        <article class="card">
-          <div class="card-top">
-            <strong class="card-title">Surrogate Evolution</strong>
-          </div>
-          <div class="card-body">
-            <p class="muted">Surrogate-assisted neural architecture search / evolution tooling</p>
-          </div>
-          <div class="card-links">
-            <a class="link" href="https://github.com/AaronMcDaniel/surrogate-evolution" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </div>
-        </article>
+          <details class="flipcard">
+            <summary class="flipcard-front">
+              <div class="card-top">
+                <strong class="card-title">LLM-Powered Kudzu Modelling &amp; Simulation</strong>
+              </div>
+              <p class="muted">Modeling &amp; simulation project (paper + code)</p>
+              <span class="hint">Click to expand</span>
+            </summary>
+            <div class="flipcard-back">
+              <div class="card-links">
+                <a class="link" href="llm_powered_kudzu_paper.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
+                <a class="link" href="https://github.gatech.edu/jbeck73/CSE6730Project" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </details>
+
+          <details class="flipcard">
+            <summary class="flipcard-front">
+              <div class="card-top">
+                <strong class="card-title">Surrogate Evolution</strong>
+              </div>
+              <p class="muted">Surrogate-assisted neural architecture search / evolution tooling</p>
+              <span class="hint">Click to expand</span>
+            </summary>
+            <div class="flipcard-back">
+              <div class="card-links">
+                <a class="link" href="https://github.com/AaronMcDaniel/surrogate-evolution" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </details>
+
+        </div>
       </div>
     </section>
 
