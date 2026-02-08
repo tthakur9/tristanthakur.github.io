@@ -445,3 +445,23 @@ a:hover{
     inset 0 1px 0 rgba(255,255,255,0.06),
     0 8px 20px rgba(0,0,0,0.25);
 }
+
+/* === Single-spine layout for dense list sections === */
+/* Keep the cards spine; remove the section-body spine for these sections */
+#experience .section-body,
+#projects .section-body{
+  border-left: none;
+  padding-left: 0;
+}
+
+/* Optional: if About/Education/Skills feel too “lined”, you can also remove theirs later.
+   For now, this targets only the list-heavy sections. */
+/* === Center the Resume/CV call-to-action in the right column === */
+#edu-resume .grid-item:nth-child(2) .section-body{
+  border-left: none;          /* looks cleaner next to a button */
+  padding-left: 0;
+  display: flex;
+  justify-content: flex-start; /* keep it left-aligned with label */
+  align-items: center;
+  min-height: 72px;            /* gives the button a stable vertical center */
+}
