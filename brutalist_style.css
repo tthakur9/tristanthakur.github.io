@@ -216,3 +216,191 @@ a:hover{
     align-items: start;
   }
 }
+/* =========================================================
+   INTERACTIVE EXPAND/COLLAPSE (details/summary) + SKILL CHIPS
+   Append below your existing brutalist_style.css
+   ========================================================= */
+
+/* Make details behave like cards in your current .cards rail */
+.flipcard{
+  border-top: 1px solid var(--line);
+  padding: 14px 0;
+}
+
+.flipcard:first-child{
+  border-top: none;
+  padding-top: 0;
+}
+
+.flipcard summary{
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+}
+
+.flipcard summary::-webkit-details-marker{
+  display: none;
+}
+
+/* Keep the summary compact + readable */
+.flipcard-front{
+  display: grid;
+  gap: 6px;
+}
+
+.flipcard .card-top{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Subtle interaction cue (system-y) */
+.hint{
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  opacity: 0.75;
+}
+
+/* Replace the hint with an explicit "state" when open */
+.flipcard[open] .hint{
+  display: none;
+}
+
+.flipcard-front::after{
+  content: "▸";
+  color: rgba(242,242,242,0.75);
+  justify-self: end;
+  font-weight: 900;
+  transform: translateY(-2px);
+}
+
+.flipcard[open] .flipcard-front::after{
+  content: "▾";
+  color: var(--accent);
+}
+
+/* The expanded panel: creates breathing room */
+.flipcard-back{
+  margin-top: 12px;
+  padding-left: 14px;
+  border-left: 2px solid var(--line-strong);
+}
+
+/* Reduce density: bullets spaced + slightly smaller */
+.flipcard-back ul{
+  margin: 0;
+  padding-left: 18px;
+}
+
+.flipcard-back li{
+  margin: 10px 0;
+  color: rgba(242,242,242,0.88);
+}
+
+/* Keep strong results obvious but not noisy */
+.flipcard-back strong{
+  color: rgba(242,242,242,0.98);
+}
+
+/* When open: highlight title slightly (still brutal) */
+.flipcard[open] .card-title{
+  color: var(--accent);
+}
+
+/* Links inside expanded content should not look like a wall */
+.flipcard-back .card-links{
+  margin-top: 12px;
+}
+
+/* Optional: smooth open without jank */
+@media (prefers-reduced-motion: no-preference){
+  .flipcard-back{
+    animation: fadeIn 140ms ease-out;
+  }
+  @keyframes fadeIn{
+    from { opacity: 0; transform: translateY(-2px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* =========================================================
+   SKILLS: compact icon-chips / tokens
+   ========================================================= */
+
+.skills{
+  display: grid;
+  gap: 16px;
+}
+
+.skill-group{
+  display: grid;
+  gap: 10px;
+}
+
+/* Keep labels consistent with your section headers */
+.skill-label{
+  color: rgba(242,242,242,0.88);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.85rem;
+}
+
+/* Chips wrap cleanly, avoids paragraph density */
+.chips{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Brutalist tokens: hard edges, strong weight */
+.chip{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 10px;
+  border: 2px solid rgba(242,242,242,0.55);
+  color: rgba(242,242,242,0.9);
+  background: transparent;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  line-height: 1;
+}
+
+/* Hover: crisp + intentional */
+.chip:hover{
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Improve tap targets on mobile */
+@media (max-width: 520px){
+  .chip{
+    padding: 9px 11px;
+  }
+}
+
+/* =========================================================
+   Small readability tweaks for dense sections (global)
+   ========================================================= */
+
+/* Lists in general: slightly more breathing room */
+.section-body ul{
+  margin-top: 10px;
+}
+
+/* Keep paragraphs from feeling like blocks */
+.section-body p{
+  margin: 0;
+}
+
+/* Make muted lines slightly smaller (dates, metadata) */
+.muted{
+  font-size: 0.95rem;
+}
