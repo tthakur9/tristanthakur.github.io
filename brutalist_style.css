@@ -518,3 +518,43 @@ a:hover{
   letter-spacing: 0.02em;
 }
 
+/* ================================
+   HEADSHOT – make it dominant
+   ================================ */
+.headshot{
+  width: 120px;          /* was ~80 */
+  height: 120px;
+  object-fit: cover;
+  border: 2px solid var(--line-strong);
+  filter: grayscale(10%) contrast(1.05);
+}
+
+/* scale slightly on large screens */
+@media (min-width: 900px){
+  .headshot{
+    width: 140px;
+    height: 140px;
+  }
+}
+
+
+/* ================================
+   EXPERIENCE / PROJECT IMAGES
+   supporting evidence, not hero
+   ================================ */
+.evidence img{
+  width: 100%;
+  max-width: 520px;     /* cap size */
+  height: auto;
+  display: block;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+/* center them nicely */
+.evidence{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
