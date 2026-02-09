@@ -465,3 +465,56 @@ a:hover{
   align-items: center;
   min-height: 72px;            /* gives the button a stable vertical center */
 }
+
+/* === Header headshot layout === */
+.hero-left{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.headshot{
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 0;                 /* keep brutalist */
+  border: 2px solid var(--line-strong);
+  filter: grayscale(10%) contrast(1.05);
+}
+
+.hero-ident .hero-name{ margin: 0; }
+.hero-ident .hero-subtitle{ margin: 8px 0 0; }
+
+/* Mobile: stack nicely */
+@media (max-width: 520px){
+  .hero-left{
+    align-items: flex-start;
+  }
+  .headshot{
+    width: 72px;
+    height: 72px;
+  }
+}
+
+/* === Evidence images inside expanded cards === */
+.evidence{
+  margin: 14px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.evidence img{
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  display: block;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.evidence figcaption{
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
