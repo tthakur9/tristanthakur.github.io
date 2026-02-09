@@ -14,12 +14,18 @@
   <main class="container">
     <header class="hero">
       <div class="hero-top">
+      <div class="hero-left">
+        <img class="headshot" src="headshot.jpg" alt="Tristan Thakur headshot" />
+        <div class="hero-ident">
         <h1 class="hero-name">Tristan Thakur</h1>
+        <p class="hero-subtitle">Computer Science @ Georgia Tech | ML/AI | Robotics &amp; Autonomy</p>
       </div>
+    </div>
 
-      <p class="hero-subtitle">Computer Science @ Georgia Tech | ML/AI | Robotics &amp; Autonomy</p>
-
-      <div class="hero-divider" aria-hidden="true"></div>
+    <div class="hero-actions">
+      <a class="btn primary" href="resume_jan26.pdf" target="_blank" rel="noopener noreferrer">Latest Resume</a>
+    </div>
+  </div>
     </header>
 
     <section class="section" id="about">
@@ -147,6 +153,10 @@
                 <li>Built parallelized batch-testing infrastructure to reduce metric noise and enable statistical benchmarking of planner variants; identified point of diminishing returns, reducing real-time planning latency by <strong>0.5 s</strong>.</li>
                 <li>Diagnosed a critical production bug in sampling bounds that blocked exploration in complex obstacle fields; implemented a dynamic bounding algorithm adopted by <strong>70+ engineers</strong> across the autonomy stack.</li>
               </ul>
+              <figure class="evidence">
+                <img src="shield_vbat.png" alt="Tristan next to Shield AI VBAT UAV" />
+                <figcaption>Shield AI — VBAT platform (summer 2025)</figcaption>
+              </figure>
             </div>
           </details>
 
@@ -164,6 +174,10 @@
                 <li>Trained a Kolmogorov-Arnold Network surrogate to predict model performance, eliminating <strong>1100+ hours</strong> of candidate-architecture training on <strong>11 TB</strong> of high-speed aerial imagery.</li>
                 <li>Compressed VGG-16 into a lightweight student classifier using knowledge distillation for a fielded autonomous ISR system, retaining comparable accuracy with <strong>0.1%</strong> of original parameters.</li>
               </ul>
+              <figure class="evidence">
+                <img src="aot_dataset.png" alt="Sample imagery from the AOT dataset used at GTRI" />
+                <figcaption>GTRI — AOT dataset sample (airborne imagery)</figcaption>
+              </figure>
             </div>
           </details>
 
