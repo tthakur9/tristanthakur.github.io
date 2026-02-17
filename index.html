@@ -12,160 +12,82 @@
 
 <body>
   <main class="container">
-    <header class="hero">
+    <header class="hero" id="top">
       <div class="hero-top">
         <div class="hero-left">
           <img class="headshot" src="headshot.jpg" alt="Tristan Thakur headshot" />
           <div class="hero-ident">
             <h1 class="hero-name">Tristan Thakur</h1>
-            <p class="hero-subtitle">
-              Computer Science @ Georgia Tech | ML/AI | Robotics &amp; Autonomy
-            </p>
+            <p class="hero-subtitle">Computer Science @ Georgia Tech | ML/AI | Robotics &amp; Autonomy</p>
           </div>
         </div>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="resume_jan26.pdf" target="_blank" rel="noopener noreferrer">Resume (PDF)</a>
+        </div>
       </div>
-    
+
       <div class="hero-divider" aria-hidden="true"></div>
+
+      <nav class="topnav" aria-label="Primary">
+        <a class="navlink" href="#about">About</a>
+        <a class="navlink" href="#experience">Experience</a>
+        <a class="navlink" href="#projects">Projects</a>
+        <a class="navlink" href="#skills">Skills</a>
+        <a class="navlink" href="#contact">Contact</a>
+      </nav>
     </header>
 
     <section class="section" id="about">
-      <div class="section-head">
-        <h2>About</h2>
-      </div>
+      <div class="section-head"><h2>About</h2></div>
       <div class="section-body">
         <p>
-          Hi, I’m Tristan, a Georgia Tech computer scientist working at the intersection of
-          machine learning and autonomy. I am focused on bridging the gap between advanced 
-          models and practical applications to develop high-performance systems that solve 
-          the most challenging real-world problems.
+          I’m Tristan, a Georgia Tech computer scientist working at the intersection of machine learning,
+          control, and autonomous systems engineering. I build deployable, high-performance systems that
+          operate under real-world physical and computational constraints.
           <br><br>
-          My experience broadly includes defense-sponsored machine learning research for airborne perception
-          and real-time decision pipelines for mission-critical autonomous flight platforms. I have worked on 
-          evolutionary optimization for neural network architecture design, surrogate modeling, 
-          deployed classification systems, and navigation algorithms operating in high-dimensional 
-          state spaces under physical and computational constraints. I care deeply about robustness, scalability, and
-          closing the gap between research prototypes and deployed systems.
+          My background includes defense-sponsored work in airborne perception and real-time autonomy.
+          I’ve built learning and optimization pipelines (evolutionary search + surrogate modeling),
+          deployed perception systems on large-scale aerial data, and engineered decision pipelines where
+          latency, robustness, and integration across subsystems matter.
           <br><br>
-          Technically, I am increasingly focused on learning-based decision systems,
-          particularly deep reinforcement learning and multi-agent coordination frameworks.
-          I am interested in decentralized control, adversarial and cooperative agent dynamics,
-          and the design of robotic systems that must reason under uncertainty while interacting
-          with other autonomous agents in dynamic environments. I am motivated by the challenge
-          of building resilient, adaptive intelligence that extends beyond static prediction
-          toward continuous, strategic decision-making.
-          <br><br>
-          Long term, I want to engineer self-improving, intelligent systems that
-          coordinate across agents and operate reliably in complex, high-stakes domains.
-          My goal is to help advance the next generation of autonomous platforms where
-          learning, control, and systems engineering converge.
+          I’m especially focused on learning-based decision systems: deep reinforcement learning,
+          multi-agent coordination, and the design of collaborative/adversarial robotic agents operating
+          under uncertainty. Long term, I want to engineer scalable autonomous platforms that unify
+          perception, learning, and control into cohesive, self-improving systems.
         </p>
-      </div>
-    </section>
 
-    <section class="section grid2" id="edu-resume">
-      <div class="grid-item">
-        <div class="section-head">
-          <h2>Education</h2>
-        </div>
-        <div class="section-body">
-          <p>
-            <strong>Georgia Institute of Technology</strong><br>
-            B.S. Computer Science (AI, Modeling &amp; Simulation) — May 2026<br>
-            GPA: 4.0/4.0 (Faculty Honors, Dean’s List)
-          </p>
-        </div>
-      </div>
-
-      <div class="grid-item">
-        <div class="section-head">
-          <h2>Resume / CV</h2>
-        </div>
-        <div class="section-body">
-          <a class="btn primary" href="resume_jan26.pdf" target="_blank" rel="noopener noreferrer">
-            Download
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="skills">
-      <div class="section-head"><h2>Technical Skills</h2></div>
-      <div class="section-body">
-        <div class="skills">
-          <div class="skill-group">
-            <div class="skill-label">Programming</div>
-            <div class="chips">
-              <span class="chip" title="C++">C++</span>
-              <span class="chip" title="Python">PYTHON</span>
-              <span class="chip" title="Java">JAVA</span>
-              <span class="chip" title="C">C</span>
-              <span class="chip" title="R">R</span>
-              <span class="chip" title="SQL">SQL</span>
-              <span class="chip" title="x86 Assembly">x86</span>
-              <span class="chip" title="Bash / Shell">BASH</span>
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <div class="skill-label">ML / Robotics</div>
-            <div class="chips">
-              <span class="chip" title="PyTorch">PYTORCH</span>
-              <span class="chip" title="NumPy">NUMPY</span>
-              <span class="chip" title="ROS">ROS</span>
-              <span class="chip" title="Conda">CONDA</span>
-              <span class="chip" title="Jupyter">JUPYTER</span>
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <div class="skill-label">Systems / Tooling</div>
-            <div class="chips">
-              <span class="chip" title="Linux">LINUX</span>
-              <span class="chip" title="Git">GIT</span>
-              <span class="chip" title="Docker">DOCKER</span>
-              <span class="chip" title="Kubernetes">KUBERNETES</span>
-              <span class="chip" title="AWS">AWS</span>
-              <span class="chip" title="MySQL">MYSQL</span>
-              <span class="chip" title="Conan">CONAN</span>
-              <span class="chip" title="Poetry">POETRY</span>
-              <span class="chip" title="Slurm">SLURM</span>
-              <span class="chip" title="GDB">GDB</span>
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <div class="skill-label">Languages</div>
-            <div class="chips">
-              <span class="chip" title="English (native)">EN</span>
-              <span class="chip" title="French (intermediate)">FR</span>
-              <span class="chip" title="Spanish (intermediate)">ES</span>
-            </div>
-          </div>
+        <div class="micro">
+          <span class="micro-item"><span class="k">Education</span> Georgia Tech — B.S. CS (AI, Modeling &amp; Simulation), May 2026</span>
+          <span class="micro-item"><span class="k">Focus</span> Autonomy • Perception • Planning • Learning agents</span>
         </div>
       </div>
     </section>
 
     <section class="section" id="experience">
-      <div class="section-head"><h2>Work Experience</h2></div>
+      <div class="section-head"><h2>Experience</h2></div>
       <div class="section-body">
-
         <div class="cards">
 
-          <details class="flipcard">
+          <details class="flipcard" id="exp-shield">
             <summary class="flipcard-front">
-              <div class="card-top">
-                <strong class="card-title">Shield AI — Autonomy Engineer Intern (Washington, DC)</strong>
+              <div class="row">
+                <strong class="row-title">Shield AI — Autonomy Engineer Intern</strong>
+                <span class="row-meta">Washington, DC • Jun–Aug 2025</span>
               </div>
-              <p class="muted">June 2025 – August 2025</p>
-              <span class="hint">Click to expand</span>
+              <p class="row-desc">
+                Built and stress-tested planning infrastructure for a fixed-wing UAS autonomy stack.
+                Focused on kinematically feasible trajectory generation, failure-mode discovery, and
+                reducing real-time planning latency while preserving reliability.
+              </p>
+              <span class="hint">Expand for evidence</span>
             </summary>
+
             <div class="flipcard-back">
-              <ul>
-                <li>Designed and deployed a hierarchical path-planning framework in C++ for Group 5 fixed-wing UAS, producing kinematically flyable trajectories <strong>3.47× faster</strong> with a <strong>+22 pp</strong> success rate at a 2.0 s horizon.</li>
-                <li>Developed a stress-testing suite to evaluate planner performance in randomized, high-complexity environments; uncovered multiple failure modes in multi-dimensional state-space navigation.</li>
-                <li>Built parallelized batch-testing infrastructure to reduce metric noise and enable statistical benchmarking of planner variants; identified point of diminishing returns, reducing real-time planning latency by <strong>0.5 s</strong>.</li>
-                <li>Diagnosed a critical production bug in sampling bounds that blocked exploration in complex obstacle fields; implemented a dynamic bounding algorithm adopted by <strong>70+ engineers</strong> across the autonomy stack.</li>
-              </ul>
+              <p class="callout">
+                Detailed metrics, benchmarks, and implementation specifics are in the resume.
+              </p>
+
               <figure class="evidence">
                 <img src="shield_vbat.png" alt="Tristan next to Shield AI VBAT UAV" />
                 <figcaption>Shield AI — VBAT drone platform</figcaption>
@@ -173,58 +95,69 @@
             </div>
           </details>
 
-          <details class="flipcard">
+          <details class="flipcard" id="exp-gtri">
             <summary class="flipcard-front">
-              <div class="card-top">
-                <strong class="card-title">Georgia Tech Research Institute — Machine Learning Engineer Intern (Atlanta, GA)</strong>
+              <div class="row">
+                <strong class="row-title">Georgia Tech Research Institute — ML Engineer Intern</strong>
+                <span class="row-meta">Atlanta, GA • May–Dec 2024</span>
               </div>
-              <p class="muted">May 2024 – December 2024</p>
-              <span class="hint">Click to expand</span>
+              <p class="row-desc">
+                Built an AutoML pipeline for airborne perception and accelerated model iteration with
+                surrogate performance prediction. Worked across HPC execution, large-scale aerial datasets,
+                and deployable model compression for constrained environments.
+              </p>
+              <span class="hint">Expand for evidence</span>
             </summary>
+
             <div class="flipcard-back">
-              <ul>
-                <li>Developed an AutoML pipeline in Python using an evolutionary Neural Architecture Search (NAS) algorithm to automate airborne object detection model construction; parallelized evaluations across GPU nodes on an HPC cluster.</li>
-                <li>Trained a Kolmogorov-Arnold Network surrogate to predict model performance, eliminating <strong>1100+ hours</strong> of candidate-architecture training on <strong>11 TB</strong> of high-speed aerial imagery.</li>
-                <li>Compressed VGG-16 into a lightweight student classifier using knowledge distillation for a fielded autonomous ISR system, retaining comparable accuracy with <strong>0.1%</strong> of original parameters.</li>
-              </ul>
+              <p class="callout">
+                Technical depth (NAS details, surrogate models, compression results) lives in the resume.
+              </p>
+
               <figure class="evidence">
                 <img src="aot_dataset.png" alt="Sample imagery from the AOT dataset used at GTRI" />
-                <figcaption>GTRI - sample airborne image data</figcaption>
+                <figcaption>GTRI — sample airborne image data</figcaption>
               </figure>
             </div>
           </details>
 
-          <details class="flipcard">
+          <details class="flipcard" id="exp-ic">
             <summary class="flipcard-front">
-              <div class="card-top">
-                <strong class="card-title">Georgia Tech Student Foundation Investments Committee — Head of Quantitative Research (Atlanta, GA)</strong>
+              <div class="row">
+                <strong class="row-title">GT Student Foundation Investments Committee — Head of Quant Research</strong>
+                <span class="row-meta">Atlanta, GA • 2023–2025</span>
               </div>
-              <p class="muted">January 2023 – December 2025</p>
-              <span class="hint">Click to expand</span>
+              <p class="row-desc">
+                Built systematic research tooling and quantitative models with an emphasis on robust signal
+                design, regime modeling, and risk-aware portfolio behavior.
+              </p>
+              <span class="hint">Expand for summary</span>
             </summary>
+
             <div class="flipcard-back">
-              <ul>
-                <li>Directed quantitative research for a <strong>$2M+ AUM</strong> university endowment fund, developing systematic trading models, signal frameworks, and portfolio optimization tools.</li>
-                <li>Developed a Gaussian Hidden Markov Model for latent market regime detection using unsupervised EM-based training and state probability inference.</li>
-                <li>Implemented a Kalman Filter for real-time intraday beta estimation and dynamic hedge ratio calibration across equity exposures.</li>
-              </ul>
+              <p class="callout">
+                This work demonstrates applied modeling + system-building; full detail is in the resume.
+              </p>
             </div>
           </details>
 
-          <details class="flipcard">
+          <details class="flipcard" id="exp-vip">
             <summary class="flipcard-front">
-              <div class="card-top">
-                <strong class="card-title">Georgia Tech Vertically Integrated Projects — Undergraduate Researcher (Atlanta, GA)</strong>
+              <div class="row">
+                <strong class="row-title">GT VIP (Google &amp; BMW sponsored) — Undergraduate Researcher</strong>
+                <span class="row-meta">Atlanta, GA • 2023–2024</span>
               </div>
-              <p class="muted">April 2023 – December 2024</p>
-              <span class="hint">Click to expand</span>
+              <p class="row-desc">
+                Worked on evolutionary methods for architecture generation and model design primitives,
+                focusing on scalable search and consistent improvements across candidate networks.
+              </p>
+              <span class="hint">Expand for summary</span>
             </summary>
+
             <div class="flipcard-back">
-              <ul>
-                <li>Led a Google &amp; BMW-sponsored AI research team developing an evolutionary algorithm for generating high-performance image classification networks; surpassed CIFAR-10 benchmarks by <strong>3.5%</strong>.</li>
-                <li>Engineered network branching mechanisms for residual/skip connections that increased classification F1 scores by <strong>12%</strong>.</li>
-                <li>Integrated a custom vision transformer layer with patch embedding and multi-headed self-attention into the primitive set, improving generated models’ collective performance by <strong>9.5%</strong>.</li>
-              </ul>
+              <p class="callout">
+                Specific results and technical contributions are documented in the resume.
+              </p>
             </div>
           </details>
 
@@ -235,22 +168,22 @@
     <section class="section" id="projects">
       <div class="section-head"><h2>Projects</h2></div>
       <div class="section-body">
-
         <div class="cards">
 
           <details class="flipcard">
             <summary class="flipcard-front">
-              <div class="card-top">
-                <strong class="card-title">Cellular Automata–LLM Ecological Policy Simulation Framework</strong>
+              <div class="row">
+                <strong class="row-title">Cellular Automata–LLM Ecological Policy Simulation Framework</strong>
+                <span class="row-meta">Aug–Dec 2025</span>
               </div>
-              <p class="muted">August 2025 – December 2025</p>
-              <span class="hint">Click to expand</span>
+              <p class="row-desc">
+                Built a closed-loop simulation where agents propose interventions against evolving system state.
+                Designed for iterative policy refinement and coordination under uncertainty.
+              </p>
+              <span class="hint">Expand for links</span>
             </summary>
+
             <div class="flipcard-back">
-              <ul>
-                <li>Developed a hybrid Cellular Automata–LLM simulation integrating spatial diffusion modeling with autonomous GPT agents that generate adaptive eradication policies.</li>
-                <li>Designed a closed-loop, RL-inspired control system enabling agents to reason over ecosystem states, optimize interventions, and coordinate across simulated landscapes.</li>
-              </ul>
               <div class="card-links">
                 <a class="link" href="llm_powered_kudzu_paper.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
                 <a class="link" href="https://github.gatech.edu/jbeck73/CSE6730Project" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -260,33 +193,38 @@
 
           <details class="flipcard">
             <summary class="flipcard-front">
-              <div class="card-top">
-                <strong class="card-title">Learning UAV State Estimation in GPS-Denied Environments</strong>
+              <div class="row">
+                <strong class="row-title">Learning UAV State Estimation in GPS-Denied Environments</strong>
+                <span class="row-meta">Jan–Apr 2025</span>
               </div>
-              <p class="muted">January 2025 – April 2025</p>
-              <span class="hint">Click to expand</span>
+              <p class="row-desc">
+                Built a multi-modal estimation pipeline for UAV state inference under degraded sensing.
+                Focused on fusing perception embeddings with dynamics signals for stability and drift reduction.
+              </p>
+              <span class="hint">Expand for links</span>
             </summary>
+
             <div class="flipcard-back">
-              <ul>
-                <li>Engineered an award-winning LSTM-based system for full 12-DOF UAV state estimation without GPS.</li>
-                <li>Built a multi-modal pipeline fusing PCA-reduced ResNet embeddings from monocular images with IMU and motor thrust data.</li>
-                <li>Augmented decoding with prior state context to reduce drift, achieving a ~<strong>60%</strong> reduction in state-MAE.</li>
-              </ul>
               <div class="card-links">
                 <a class="link" href="https://github.gatech.edu/pages/adeb40/ML-Project-Group-60/" target="_blank" rel="noopener noreferrer">Website</a>
-                <a class="link" href="https://github.gatech.edu/hkuperman3/Learning-UAV-State-Estimator" target="_blank" rel="noopener noreferrer">Github</a>
+                <a class="link" href="https://github.gatech.edu/hkuperman3/Learning-UAV-State-Estimator" target="_blank" rel="noopener noreferrer">GitHub</a>
               </div>
             </div>
           </details>
 
           <details class="flipcard">
             <summary class="flipcard-front">
-              <div class="card-top">
-                <strong class="card-title">Surrogate Evolution</strong>
+              <div class="row">
+                <strong class="row-title">Surrogate Evolution</strong>
+                <span class="row-meta">In progress</span>
               </div>
-              <p class="muted">Surrogate-assisted neural architecture search. (Not done)</p>
-              <span class="hint">Click to expand</span>
+              <p class="row-desc">
+                Surrogate-assisted neural architecture search tooling aimed at accelerating candidate evaluation
+                and improving iteration speed under compute constraints.
+              </p>
+              <span class="hint">Expand for link</span>
             </summary>
+
             <div class="flipcard-back">
               <div class="card-links">
                 <a class="link" href="https://github.com/AaronMcDaniel/surrogate-evolution" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -298,10 +236,46 @@
       </div>
     </section>
 
-    <section class="section" id="contact">
-      <div class="section-head">
-        <h2>Contact Me</h2>
+    <section class="section" id="skills">
+      <div class="section-head"><h2>Skills</h2></div>
+      <div class="section-body">
+        <div class="skills">
+          <div class="skill-group">
+            <div class="skill-label">Programming</div>
+            <div class="chips">
+              <span class="chip">C++</span><span class="chip">Python</span><span class="chip">Java</span>
+              <span class="chip">C</span><span class="chip">SQL</span><span class="chip">Bash</span><span class="chip">x86</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-label">ML / Robotics</div>
+            <div class="chips">
+              <span class="chip">PyTorch</span><span class="chip">NumPy</span><span class="chip">ROS</span>
+              <span class="chip">Jupyter</span><span class="chip">Conda</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-label">Systems</div>
+            <div class="chips">
+              <span class="chip">Linux</span><span class="chip">Docker</span><span class="chip">Kubernetes</span>
+              <span class="chip">AWS</span><span class="chip">Git</span><span class="chip">Slurm</span><span class="chip">GDB</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-label">Languages</div>
+            <div class="chips">
+              <span class="chip">EN</span><span class="chip">FR</span><span class="chip">ES</span>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-head"><h2>Contact</h2></div>
       <div class="section-body">
         <p class="contact-line">
           <a class="link" href="mailto:trisjt21@gmail.com">Email</a>
@@ -309,6 +283,8 @@
           <a class="link" href="https://www.linkedin.com/in/tristan-thakur/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <span class="sep">|</span>
           <a class="link" href="https://github.com/tthakur9" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <span class="sep">|</span>
+          <a class="link" href="#top">Top</a>
         </p>
       </div>
     </section>
