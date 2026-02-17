@@ -498,4 +498,12 @@ a:hover{
 .section-head{
   padding-bottom: 10px;
 }
+/* Light section band to create visual chapters */
+.section{
+  background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.0));
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-left: -8px;
+  margin-right: -8px;
+}
 
