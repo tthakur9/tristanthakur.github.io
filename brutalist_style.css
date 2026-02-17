@@ -2,9 +2,13 @@
   --bg: #0b0b0b;
   --fg: #f2f2f2;
   --muted: #bdbdbd;
-  --line: rgba(242,242,242,0.22);
-  --line-strong: rgba(242,242,242,0.75);
+
+  /* borders are intentionally lighter now */
+  --line: rgba(242,242,242,0.18);
+  --line-strong: rgba(242,242,242,0.42);
+
   --accent: #00ff85;
+  --panel: rgba(255,255,255,0.03);
 }
 
 *{ box-sizing: border-box; }
@@ -19,7 +23,6 @@ html, body{
   letter-spacing: 0.01em;
 }
 
-/* subtle grain + vignette (sophisticated, still raw) */
 body::before{
   content:"";
   position: fixed;
@@ -29,7 +32,6 @@ body::before{
     radial-gradient(1200px 700px at 50% 15%, rgba(255,255,255,0.05), transparent 60%),
     radial-gradient(900px 600px at 70% 80%, rgba(255,255,255,0.03), transparent 60%),
     linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.35));
-  mix-blend-mode: normal;
   opacity: 1;
 }
 
@@ -40,30 +42,55 @@ body::before{
   position: relative;
 }
 
-/* ONE frame for the whole page */
+/* One frame, thinner than before */
 main.container{
-  border: 2px solid var(--line-strong);
-  padding: 26px 22px 18px;
+  border: 1px solid var(--line-strong);
+  padding: 28px 24px 18px;
 }
 
-/* header: no box, just spacing + divider */
+/* -------------------------------------------------------
+   HERO
+------------------------------------------------------- */
+
 .hero{
-  padding: 0 0 16px 0;
-  border: none;
+  padding: 0 0 14px 0;
 }
 
 .hero-top{
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  gap: 18px;
   flex-wrap: wrap;
+}
+
+.hero-left{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.headshot{
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 0;
+  border: 1px solid rgba(242,242,242,0.35);
+  filter: grayscale(10%) contrast(1.05);
+}
+
+@media (max-width: 520px){
+  .headshot{ width: 96px; height: 96px; }
+}
+
+@media (min-width: 900px){
+  .headshot{ width: 140px; height: 140px; }
 }
 
 .hero-name{
   margin: 0;
-  font-size: clamp(2.1rem, 5vw, 3.3rem);
-  letter-spacing: -0.04em;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  letter-spacing: -0.045em;
   text-transform: uppercase;
 }
 
@@ -72,83 +99,106 @@ main.container{
   color: var(--muted);
 }
 
+.hero-actions{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .hero-divider{
   margin-top: 18px;
-  height: 2px;
+  height: 1px;
   background: var(--line-strong);
 }
 
-/* sections: remove full boxes; use dividers and a left rule */
-.section{
-  margin-top: 18px;
-  padding: 14px 0 0;
+/* Sticky anchor nav (not tabs) */
+.topnav{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  margin-top: 14px;
+  padding: 10px 0;
+  background: rgba(11,11,11,0.70);
+  backdrop-filter: blur(8px);
   border-top: 1px solid var(--line);
-}
-
-.section-head{
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.section-head h2{
-  margin: 0;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: rgba(242,242,242,0.88);
-}
-
-.section-body{
-  margin-top: 10px;
-  padding-left: 14px;
-  border-left: 2px solid var(--line-strong);
-}
-
-/* projects: clean list with minimal separators (no nested boxes) */
-.cards{
-  margin-top: 12px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  padding-left: 14px;
-  border-left: 2px solid var(--line-strong);
-}
-
-.card{
-  padding: 14px 0;
-  border: none;
-  border-top: 1px solid var(--line);
-}
-
-.card:first-child{
-  border-top: none;
-  padding-top: 0;
-}
-
-.card-title{
-  font-size: 1.05rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.muted{
-  color: var(--muted);
-  margin: 10px 0 0;
-}
-
-.card-links{
-  margin-top: 10px;
+  border-bottom: 1px solid var(--line);
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
 }
 
-/* links: underlined, aggressive, readable */
+.navlink{
+  color: rgba(242,242,242,0.85);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  padding: 4px 0;
+}
+
+.navlink:hover{
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* -------------------------------------------------------
+   SECTIONS
+------------------------------------------------------- */
+
+.section{
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.section-head{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.section-head h2{
+  margin: 0;
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: rgba(242,242,242,0.88);
+}
+
+.section-body{
+  margin-top: 12px;
+  padding: 0;              /* removed left rule motif */
+}
+
+/* small spec-style metadata row */
+.micro{
+  margin-top: 14px;
+  display: grid;
+  gap: 6px;
+  color: rgba(242,242,242,0.78);
+  font-size: 0.95rem;
+}
+
+.micro .k{
+  color: rgba(242,242,242,0.9);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  margin-right: 8px;
+}
+
+/* -------------------------------------------------------
+   LINKS + BUTTONS
+------------------------------------------------------- */
+
 a{
   color: var(--fg);
   text-decoration: none;
-  border-bottom: 2px solid rgba(242,242,242,0.7);
+  border-bottom: 2px solid rgba(242,242,242,0.55);
 }
 
 a:hover{
@@ -156,19 +206,19 @@ a:hover{
   border-bottom-color: var(--accent);
 }
 
-/* button: still brutal, but not screaming */
 .btn{
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 10px 12px;
-  border: 2px solid var(--line-strong);
+  border: 1px solid rgba(242,242,242,0.35);
   background: transparent;
   color: var(--fg);
   text-decoration: none;
-  font-weight: 800;
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.10em;
+  font-size: 0.85rem;
 }
 
 .btn.primary{
@@ -182,54 +232,20 @@ a:hover{
   color: var(--bg);
 }
 
-.contact-line{
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+/* -------------------------------------------------------
+   LIST RAIL (experience/projects)
+------------------------------------------------------- */
 
-.sep{ color: var(--muted); }
-
-.footer{
-  margin-top: 18px;
-  padding-top: 12px;
-  border-top: 2px solid var(--line-strong);
-  text-align: left;
-}
-
-.grid2{
+.cards{
+  margin-top: 10px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 18px;
-}
-
-.grid-item .section-body{
-  /* reuse the same left-rule look for consistency */
-  padding-left: 14px;
-  border-left: 2px solid var(--line-strong);
-}
-
-@media (min-width: 840px){
-  .grid2{
-    grid-template-columns: 1fr 280px;
-    align-items: start;
-  }
-}
-/* =========================================================
-   INTERACTIVE EXPAND/COLLAPSE (details/summary) + SKILL CHIPS
-   Append below your existing brutalist_style.css
-   ========================================================= */
-
-/* Make details behave like cards in your current .cards rail */
-.flipcard{
+  gap: 0;
   border-top: 1px solid var(--line);
-  padding: 14px 0;
 }
 
-.flipcard:first-child{
-  border-top: none;
-  padding-top: 0;
+.flipcard{
+  border-bottom: 1px solid var(--line);
 }
 
 .flipcard summary{
@@ -237,19 +253,13 @@ a:hover{
   cursor: pointer;
   user-select: none;
   outline: none;
+  padding: 16px 0;
 }
 
-.flipcard summary::-webkit-details-marker{
-  display: none;
-}
+.flipcard summary::-webkit-details-marker{ display: none; }
 
-/* Keep the summary compact + readable */
-.flipcard-front{
-  display: grid;
-  gap: 6px;
-}
-
-.flipcard .card-top{
+/* "system entry" row */
+.row{
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -257,24 +267,57 @@ a:hover{
   flex-wrap: wrap;
 }
 
-/* Subtle interaction cue (system-y) */
-.hint{
-  color: var(--muted);
-  font-size: 0.82rem;
+.row-title{
+  font-size: 1.02rem;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  opacity: 0.75;
+  letter-spacing: 0.08em;
 }
 
-/* Replace the hint with an explicit "state" when open */
-.flipcard[open] .hint{
-  display: none;
+.row-meta{
+  color: var(--muted);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.row-desc{
+  margin: 10px 0 0;
+  color: rgba(242,242,242,0.84);
+  max-width: 78ch;
+}
+
+/* subtle left tick instead of full vertical rules */
+.flipcard summary{
+  position: relative;
+}
+
+.flipcard summary::before{
+  content:"";
+  position: absolute;
+  left: -12px;
+  top: 20px;
+  width: 3px;
+  height: 18px;
+  background: rgba(242,242,242,0.35);
+}
+
+.flipcard[open] summary::before{
+  background: var(--accent);
+}
+
+/* hint + chevron */
+.hint{
+  display: inline-block;
+  margin-top: 10px;
+  color: rgba(242,242,242,0.55);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
 }
 
 .flipcard-front::after{
   content: "▸";
-  color: rgba(242,242,242,0.75);
-  justify-self: end;
+  float: right;
+  color: rgba(242,242,242,0.55);
   font-weight: 900;
   transform: translateY(-2px);
 }
@@ -284,53 +327,67 @@ a:hover{
   color: var(--accent);
 }
 
-/* The expanded panel: creates breathing room */
 .flipcard-back{
-  margin-top: 12px;
-  padding-left: 14px;
-  border-left: 2px solid var(--line-strong);
+  padding: 0 0 18px 0;
 }
 
-/* Reduce density: bullets spaced + slightly smaller */
-.flipcard-back ul{
+/* open state: elevated slate */
+.flipcard[open]{
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.05),
+    0 10px 22px rgba(0,0,0,0.28);
+}
+
+.flipcard[open] summary{
+  padding-bottom: 12px;
+}
+
+.callout{
   margin: 0;
-  padding-left: 18px;
+  padding: 12px 14px;
+  border: 1px solid rgba(242,242,242,0.14);
+  background: rgba(255,255,255,0.02);
+  color: rgba(242,242,242,0.80);
+  max-width: 78ch;
 }
 
-.flipcard-back li{
-  margin: 10px 0;
-  color: rgba(242,242,242,0.88);
+/* evidence images */
+.evidence{
+  margin: 14px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid rgba(242,242,242,0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-/* Keep strong results obvious but not noisy */
-.flipcard-back strong{
-  color: rgba(242,242,242,0.98);
+.evidence img{
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  border: 1px solid rgba(242,242,242,0.18);
 }
 
-/* When open: highlight title slightly (still brutal) */
-.flipcard[open] .card-title{
-  color: var(--accent);
+.evidence figcaption{
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
 }
 
-/* Links inside expanded content should not look like a wall */
-.flipcard-back .card-links{
+/* links row inside expanded panel */
+.card-links{
   margin-top: 12px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
-/* Optional: smooth open without jank */
-@media (prefers-reduced-motion: no-preference){
-  .flipcard-back{
-    animation: fadeIn 140ms ease-out;
-  }
-  @keyframes fadeIn{
-    from { opacity: 0; transform: translateY(-2px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-}
-
-/* =========================================================
-   SKILLS: compact icon-chips / tokens
-   ========================================================= */
+/* -------------------------------------------------------
+   SKILLS
+------------------------------------------------------- */
 
 .skills{
   display: grid;
@@ -342,7 +399,6 @@ a:hover{
   gap: 10px;
 }
 
-/* Keep labels consistent with your section headers */
 .skill-label{
   color: rgba(242,242,242,0.88);
   text-transform: uppercase;
@@ -350,183 +406,53 @@ a:hover{
   font-size: 0.85rem;
 }
 
-/* Chips wrap cleanly, avoids paragraph density */
 .chips{
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-/* Brutalist tokens: hard edges, strong weight */
 .chip{
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 7px 10px;
-  border: 2px solid rgba(242,242,242,0.55);
-  color: rgba(242,242,242,0.9);
+  border: 1px solid rgba(242,242,242,0.35);
+  color: rgba(242,242,242,0.88);
   background: transparent;
-  font-weight: 900;
-  letter-spacing: 0.12em;
+  font-weight: 800;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   line-height: 1;
 }
 
-/* Hover: crisp + intentional */
 .chip:hover{
   border-color: var(--accent);
   color: var(--accent);
 }
 
-/* Improve tap targets on mobile */
-@media (max-width: 520px){
-  .chip{
-    padding: 9px 11px;
-  }
-}
+/* -------------------------------------------------------
+   CONTACT + FOOTER
+------------------------------------------------------- */
 
-/* =========================================================
-   Small readability tweaks for dense sections (global)
-   ========================================================= */
-
-/* Lists in general: slightly more breathing room */
-.section-body ul{
-  margin-top: 10px;
-}
-
-/* Keep paragraphs from feeling like blocks */
-.section-body p{
+.contact-line{
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-/* Make muted lines slightly smaller (dates, metadata) */
+.sep{ color: var(--muted); }
+
+.footer{
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-strong);
+  text-align: left;
+}
+
 .muted{
+  color: var(--muted);
   font-size: 0.95rem;
 }
-
-.flipcard-back{
-  border-left: none !important;   /* kill extra line */
-  padding-left: 0;                /* align with text above */
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px solid var(--line);  /* use horizontal separation instead */
-}
-
-/* =====================================================
-   ELEVATED OPEN STATE – subtle, powerful
-   ===================================================== */
-
-.flipcard[open]{
-  background: linear-gradient(
-    180deg,
-    rgba(255,255,255,0.05),
-    rgba(255,255,255,0.02)
-  );
-  padding: 16px;
-  margin: 8px -16px;
-}
-
-/* soften internal separation */
-.flipcard[open] .flipcard-back{
-  border-top: 1px solid rgba(255,255,255,0.12);
-  margin-top: 14px;
-  padding-top: 14px;
-}
-
-/* make title pop slightly */
-.flipcard[open] .card-title{
-  color: var(--accent);
-}
-
-/* subtle depth */
-.flipcard[open]{
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.06),
-    0 8px 20px rgba(0,0,0,0.25);
-}
-
-/* === Single-spine layout for dense list sections === */
-/* Keep the cards spine; remove the section-body spine for these sections */
-#experience .section-body,
-#projects .section-body{
-  border-left: none;
-  padding-left: 0;
-}
-
-/* Optional: if About/Education/Skills feel too “lined”, you can also remove theirs later.
-   For now, this targets only the list-heavy sections. */
-/* === Center the Resume/CV call-to-action in the right column === */
-#edu-resume .grid-item:nth-child(2) .section-body{
-  border-left: none;          /* looks cleaner next to a button */
-  padding-left: 0;
-  display: flex;
-  justify-content: flex-start; /* keep it left-aligned with label */
-  align-items: center;
-  min-height: 72px;            /* gives the button a stable vertical center */
-}
-
-/* =====================================================
-   IMAGES (final overrides)
-   - bigger headshot
-   - smaller evidence images
-   ===================================================== */
-
-.hero-left{
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.headshot{
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 0;
-  border: 2px solid var(--line-strong);
-  filter: grayscale(10%) contrast(1.05);
-}
-
-/* Keep headshot from shrinking too much on small screens */
-@media (max-width: 520px){
-  .headshot{
-    width: 96px;
-    height: 96px;
-  }
-}
-
-/* Make headshot slightly larger on big screens */
-@media (min-width: 900px){
-  .headshot{
-    width: 140px;
-    height: 140px;
-  }
-}
-
-/* Evidence images: supporting, not dominant */
-.evidence{
-  margin: 14px 0 0;
-  padding-top: 14px;
-  border-top: 1px solid var(--line);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.evidence img{
-  width: 100%;
-  max-width: 520px;
-  height: auto;
-  display: block;
-  border: 1px solid rgba(255,255,255,0.18);
-}
-
-.evidence figcaption{
-  margin-top: 10px;
-  color: var(--muted);
-  font-size: 0.9rem;
-  letter-spacing: 0.02em;
-}
-
-
-
