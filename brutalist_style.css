@@ -474,3 +474,10 @@ a:hover{
 .section{
   scroll-margin-top: 74px; /* adjust if your nav height changes */
 }
+/* Make the sticky bar feel like its own layer */
+.topnav{
+  background: rgba(11,11,11,0.92);
+  border-top: none;
+  border-bottom: 1px solid var(--line-strong);
+}
+
