@@ -480,4 +480,22 @@ a:hover{
   border-top: none;
   border-bottom: 1px solid var(--line-strong);
 }
+/* === Stronger section separation / rhythm === */
+.section{
+  margin-top: 44px;       /* was ~22 */
+  padding-top: 26px;      /* was ~18 */
+  border-top: 1px solid rgba(242,242,242,0.14); /* slightly softer */
+}
+
+/* Extra separation before dense sections */
+#experience.section,
+#projects.section{
+  margin-top: 64px;
+  padding-top: 34px;
+}
+
+/* Make headings feel like section anchors */
+.section-head{
+  padding-bottom: 10px;
+}
 
