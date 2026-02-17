@@ -456,3 +456,21 @@ a:hover{
   color: var(--muted);
   font-size: 0.95rem;
 }
+/* === Global sticky nav that follows scroll === */
+.topnav{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin-top: 0;
+  padding: 12px 0;
+}
+
+/* Give the sticky nav breathing room from the frame */
+.hero{
+  padding-bottom: 0;
+}
+
+/* Prevent first section from hiding under the sticky nav */
+.section{
+  scroll-margin-top: 74px; /* adjust if your nav height changes */
+}
