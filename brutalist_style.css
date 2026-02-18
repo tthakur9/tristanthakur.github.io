@@ -581,6 +581,7 @@ a:hover{
   background: rgba(12,12,12,0.98);
   box-shadow: 0 24px 70px rgba(0,0,0,0.6);
   padding: 18px;
+  color: var(--fg);
 }
 
 .modal-head{
@@ -595,6 +596,7 @@ a:hover{
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  color: var(--fg);
 }
 .modal-sub{
   color: var(--muted);
@@ -610,4 +612,6 @@ a:hover{
 .modal-body{
   padding-top: 12px;
 }
+
+
 
