@@ -247,14 +247,14 @@
               </figure>
             </div>
           </details>
-
+          
           <article class="card" data-modal="modal-kudzu" role="button" tabindex="0" aria-haspopup="dialog">
             <div class="row">
-              <strong class="row-title">Cellular Automata–LLM Ecological Policy Simulation Framework</strong>
+              <strong class="row-title">Cellular Automata–LLM Ecological Policy Modeling &amp; Simulation</strong>
               <span class="row-meta">Aug–Dec 2025</span>
             </div>
             <p class="row-desc">
-              LLM-driven decision-making layered over a spatial CA simulator to control ecological dynamics under cost and state constraints.
+              A hybrid Cellular Automata-LLM decision framework that eradicates invasive species under explicit spatial and budget constraints.
             </p>
             <span class="hint">Open</span>
           </article>
@@ -263,28 +263,103 @@
             <div class="modal-window">
               <div class="modal-head">
                 <div>
-                  <div class="modal-title">Cellular Automata–LLM Ecological Policy Simulation Framework</div>
+                  <div class="modal-title">Cellular Automata–LLM Ecological Policy Modeling &amp; Simulation</div>
                   <div class="modal-sub">Aug–Dec 2025</div>
                 </div>
                 <button class="modal-close" aria-label="Close">✕</button>
               </div>
           
               <div class="modal-body">
-                <p>…your narrative technical description…</p>
+                <p>
+                  Designed and implemented a hybrid simulation environment that couples a
+                  spatially explicit Cellular Automata (CA) model with a Large Language Model (LLM)
+                  acting as a constrained decision-making agent. The CA models invasive species
+                  dynamics across a land-cover grid, incorporating life-cycle transitions,
+                  stochastic mortality, density-dependent spread, and long-range dispersal.
+                </p>
+            
+                <p>
+                  I architected the interface between the simulator and the LLM policy,
+                  defining a structured observation schema and a cost-aware action space
+                  that enforces strict budget and temporal constraints. On each decision
+                  cycle, the LLM reasons over summarized system state to select interventions
+                  that balance immediate suppression against long-term eradication strategy.
+                </p>
+            
+                <p>
+                  In multi-year simulations, the LLM-driven policy achieved complete
+                  eradication while reducing peak infestation and intervention frequency
+                  relative to greedy and heuristic baselines. The project demonstrates how
+                  language-model agents can operate as adaptive controllers within
+                  partially observed, stochastic dynamical systems rather than static
+                  rule-based policies.
+                </p>
           
                 <div class="card-links">
-                  <a class="link" href="llm_powered_kudzu_paper.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
                   <a class="link" href="https://github.gatech.edu/jbeck73/CSE6730Project" target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a class="link" href="llm_powered_kudzu_paper.pdf" target="_blank" rel="noopener noreferrer">Report (PDF)</a>
                 </div>
-          
                 <figure class="evidence">
                   <img src="kudzu.png" alt="Invasive Kudzu spread in environment" />
-                  <figcaption>Spatial CA state illustrating kudzu propagation over time.</figcaption>
+                  <figcaption>Effects of invasive Kudzu spread</figcaption>
                 </figure>
               </div>
             </div>
           </dialog>
 
+          <article class="card" data-modal="modal-kudzu" role="button" tabindex="0" aria-haspopup="dialog">
+            <div class="row">
+              <strong class="row-title">Learning UAV State Estimation in GPS-Denied Environments</strong>
+              <span class="row-meta">Jan–Apr 2025</span>
+            </div>
+            <p class="row-desc">
+              A multimodal, dynamics-aided state estimator that fuses vision + IMU + control inputs to predict 12-DoF UAV state in GPS-denied conditions.
+            </p>
+            <span class="hint">Open</span>
+          </article>
+          
+          <dialog class="modal" id="modal-kudzu" aria-label="Project details: Kudzu framework">
+            <div class="modal-window">
+              <div class="modal-head">
+                <div>
+                  <div class="modal-title">Learning UAV State Estimation in GPS-Denied Environments</div>
+                  <div class="modal-sub">Jan–Apr 2025</div>
+                </div>
+                <button class="modal-close" aria-label="Close">✕</button>
+              </div>
+          
+              <div class="modal-body">
+                <p>
+                  Built an end-to-end learning pipeline for UAV state estimation using the Race Against the Machine dataset
+                  (time-synchronized RGB frames, IMU, motor current/thrust, command inputs, and motion ground truth). The
+                  estimator learns a function of historical observations and actuation inputs to predict the full 12-dimensional state
+                  (position, attitude, linear/angular velocity) from a sliding temporal window, explicitly incorporating dynamics signals
+                  beyond standard visual–inertial fusion.
+                </p>
+            
+                <p>
+                  Implemented a preprocessing stack that extracts 512-D visual embeddings via pretrained ResNet-18, compresses them
+                  with PCA to 100 features (~95% variance preserved), and merges them with cleaned/normalized IMU + control features.
+                  Trained and compared three estimators: a linear baseline, an MLP over a concatenated history window, and an LSTM
+                  over 50 timesteps. The MLP achieved the best overall accuracy (Test MAE 0.141; position MAE 0.099 m; velocity MAE
+                  0.372 m/s), while the LSTM was strongest on orientation (roll/pitch/yaw MAE 0.0539 rad), demonstrating the tradeoff
+                  between high-dimensional nonlinear mapping vs. sequential inductive bias.
+                </p>
+          
+                <div class="card-links">
+                  <a class="link" href="https://github.gatech.edu/pages/adeb40/ML-Project-Group-60/" target="_blank" rel="noopener noreferrer">Website</a>
+                  <a class="link" href="https://github.gatech.edu/hkuperman3/Learning-UAV-State-Estimator" target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a class="link" href="ML_project.pdf" target="_blank" rel="noopener noreferrer">Report (PDF)</a>
+                </div>
+          
+                <figure class="evidence">
+                  <img src="drone_state.gif" alt="12-DoF UAS state image" />
+                  <figcaption>12-DoF UAS state</figcaption>
+                </figure>
+                
+              </div>
+            </div>
+          </dialog>
 
         </div>
       </div>
