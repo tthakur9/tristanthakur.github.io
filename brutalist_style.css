@@ -552,3 +552,62 @@ a:hover{
 #projects .flipcard[open]{
   border-color: rgba(0,255,133,0.25);
 }
+/* clickable cards */
+.card{
+  border: 1px solid rgba(242,242,242,0.16);
+  padding: 14px;
+  background: rgba(255,255,255,0.01);
+  cursor: pointer;
+}
+.card:hover{
+  border-color: rgba(0,255,133,0.25);
+}
+
+/* modal overlay */
+.modal{
+  width: min(920px, calc(100vw - 24px));
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+.modal::backdrop{
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(8px);
+}
+
+/* modal window */
+.modal-window{
+  border: 1px solid rgba(242,242,242,0.22);
+  background: rgba(12,12,12,0.98);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.6);
+  padding: 18px;
+}
+
+.modal-head{
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(242,242,242,0.14);
+  padding-bottom: 12px;
+}
+.modal-title{
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.modal-sub{
+  color: var(--muted);
+  margin-top: 6px;
+}
+.modal-close{
+  background: transparent;
+  border: 1px solid rgba(242,242,242,0.25);
+  color: var(--fg);
+  padding: 6px 10px;
+  cursor: pointer;
+}
+.modal-body{
+  padding-top: 12px;
+}
+
