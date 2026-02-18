@@ -166,7 +166,7 @@
                 Developed a hybrid Cellular Automata-LLM decision framework that eradicates invasive species under 
                 explicit spatial and budget constraints.
               </p>
-              <span class="hint">Expand for links</span>
+              <span class="hint">Read more</span>
             </summary>
 
             <div class="flipcard-back">
@@ -212,20 +212,38 @@
                 <span class="row-meta">Jan–Apr 2025</span>
               </div>
               <p class="row-desc">
-                Spearheaded an award-winning ML project on learned UAS state estimation, exploring 
-                GPS-denied perception using deep learning.
+                A multimodal, dynamics-aided state estimator that fuses vision + IMU + control inputs to predict 12-DoF UAV state in GPS-denied conditions.
               </p>
-              <span class="hint">Expand for links</span>
+              <span class="hint">Read more</span>
             </summary>
-
+          
             <div class="flipcard-back">
+              <p>
+                Built an end-to-end learning pipeline for UAV state estimation using the Race Against the Machine dataset
+                (time-synchronized RGB frames, IMU, motor current/thrust, command inputs, and motion ground truth). The
+                estimator learns a function of historical observations and actuation inputs to predict the full 12-dimensional state
+                (position, attitude, linear/angular velocity) from a sliding temporal window, explicitly incorporating dynamics signals
+                beyond standard visual–inertial fusion. :contentReference[oaicite:0]{index=0}
+              </p>
+          
+              <p>
+                Implemented a preprocessing stack that extracts 512-D visual embeddings via pretrained ResNet-18, compresses them
+                with PCA to 100 features (~95% variance preserved), and merges them with cleaned/normalized IMU + control features.
+                Trained and compared three estimators: a linear baseline, an MLP over a concatenated history window, and an LSTM
+                over 50 timesteps. The MLP achieved the best overall accuracy (Test MAE 0.141; position MAE 0.099 m; velocity MAE
+                0.372 m/s), while the LSTM was strongest on orientation (roll/pitch/yaw MAE 0.0539 rad), demonstrating the tradeoff
+                between high-dimensional nonlinear mapping vs. sequential inductive bias. :contentReference[oaicite:1]{index=1}
+              </p>
+          
               <div class="card-links">
                 <a class="link" href="https://github.gatech.edu/pages/adeb40/ML-Project-Group-60/" target="_blank" rel="noopener noreferrer">Website</a>
                 <a class="link" href="https://github.gatech.edu/hkuperman3/Learning-UAV-State-Estimator" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a class="link" href="ML_project.pdf" target="_blank" rel="noopener noreferrer">Report (PDF)</a>
               </div>
+          
               <figure class="evidence">
-                <img src="drone_state.gif" alt="UAV state estimation graphic from RATM dataset" />
-                <figcaption>Definition of UAS state/pose</figcaption>
+                <img src="aot_dataset.png" alt="Example dataset / perception visualization" />
+                <figcaption>Multimodal learning pipeline: visual features + IMU + controls for GPS-denied state estimation.</figcaption>
               </figure>
             </div>
           </details>
