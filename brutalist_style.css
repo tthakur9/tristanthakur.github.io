@@ -613,5 +613,13 @@ a:hover{
   padding-top: 12px;
 }
 
+/* HARD OVERRIDE: force dialog + all descendants to inherit your theme color */
+dialog.modal {
+  color: var(--fg) !important;
+}
+
+dialog.modal * {
+  color: inherit !important;
+}
 
 
