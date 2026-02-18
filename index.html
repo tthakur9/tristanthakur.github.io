@@ -248,6 +248,44 @@
             </div>
           </details>
 
+          <article class="card" data-modal="modal-kudzu" role="button" tabindex="0" aria-haspopup="dialog">
+            <div class="row">
+              <strong class="row-title">Cellular Automata–LLM Ecological Policy Simulation Framework</strong>
+              <span class="row-meta">Aug–Dec 2025</span>
+            </div>
+            <p class="row-desc">
+              LLM-driven decision-making layered over a spatial CA simulator to control ecological dynamics under cost and state constraints.
+            </p>
+            <span class="hint">Open</span>
+          </article>
+          
+          <dialog class="modal" id="modal-kudzu" aria-label="Project details: Kudzu framework">
+            <div class="modal-window">
+              <div class="modal-head">
+                <div>
+                  <div class="modal-title">Cellular Automata–LLM Ecological Policy Simulation Framework</div>
+                  <div class="modal-sub">Aug–Dec 2025</div>
+                </div>
+                <button class="modal-close" aria-label="Close">✕</button>
+              </div>
+          
+              <div class="modal-body">
+                <p>…your narrative technical description…</p>
+          
+                <div class="card-links">
+                  <a class="link" href="llm_powered_kudzu_paper.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
+                  <a class="link" href="https://github.gatech.edu/jbeck73/CSE6730Project" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+          
+                <figure class="evidence">
+                  <img src="kudzu.png" alt="Invasive Kudzu spread in environment" />
+                  <figcaption>Spatial CA state illustrating kudzu propagation over time.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </dialog>
+
+
         </div>
       </div>
     </section>
@@ -308,5 +346,27 @@
       <span class="muted">© Tristan Thakur</span>
     </footer>
   </main>
+  <script>
+    // open on click or Enter/Space
+    document.querySelectorAll('.card[data-modal]').forEach(card => {
+      const id = card.getAttribute('data-modal');
+      const dlg = document.getElementById(id);
+  
+      const open = () => dlg && dlg.showModal();
+      card.addEventListener('click', open);
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+      });
+    });
+  
+    // close buttons + click backdrop to close
+    document.querySelectorAll('dialog.modal').forEach(dlg => {
+      dlg.addEventListener('click', (e) => {
+        if (e.target === dlg) dlg.close();
+      });
+      const btn = dlg.querySelector('.modal-close');
+      if (btn) btn.addEventListener('click', () => dlg.close());
+    });
+  </script>
 </body>
 </html>
